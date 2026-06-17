@@ -17,7 +17,7 @@
  * Tokens are organised in three layers:
  *   1. Primitive  — raw palette values (gray-900, cream-50, etc.)
  *   2. Semantic   — purpose-based names that reference primitives (surface, text-primary)
- *   3. Component  — map semantic tokens to specific UI elements (btn-primary, btn-secondary)
+ *   3. Component  — optional; map semantic tokens to specific UI elements when needed
  *
  * Changing a primitive updates every semantic and component token that references it.
  */
@@ -29,36 +29,42 @@
   /* ── Primitives — raw palette values ──
    * These define the raw colour palette. They generate classes (e.g. bg-cream-50)
    * but you should avoid using them directly — use semantic tokens instead. */
-  --color-gray-900: #111;
-  --color-gray-700: #333;
-  --color-gray-500: #666;
-  --color-cream-50:  #f7f7f4;
-  --color-cream-100: #f2f1ed;
-  --color-cream-200: #e6e5e0;
-  --color-cream-300: #D8D6CE;
-  --color-ink:       #26251e;
-  --color-ink-50:    rgba(38, 37, 30, 0.5);
+
+  /* gray — from Color / grey */
+  --color-gray-50:  #F9FAFA;
+  --color-gray-100: #F4F5F5;
+  --color-gray-200: #E4E7E5;
+  --color-gray-300: #D1D6D4;
+  --color-gray-400: #9BA6A1;
+  --color-gray-500: #6B7972;
+  --color-gray-600: #4D5752;
+  --color-gray-700: #3B4440;
+  --color-gray-800: #242926;
+  --color-gray-900: #171C19;
+  --color-gray-950: #090C0B;
+
+  /* cream — from Color / green */
+  --color-cream-50:  #E8F5EE;
+  --color-cream-100: #B7EBD1;
+  --color-cream-200: #4CC789;
+  --color-cream-300: #00CC66;
+  --color-cream-400: #0F5230;
+  --color-cream-500: #0F5230;
+  --color-cream-600: #3D0903;
+
 
   /* ── Semantic — purpose-based, reference primitives ──
    * These are the tokens you use in components.
    * e.g. --color-surface → bg-surface, --color-text-primary → text-text-primary */
-  --color-surface:        var(--color-cream-50);
-  --color-card:           var(--color-cream-100);
-  --color-text-primary:   var(--color-ink);
-  --color-text-muted:     var(--color-ink-50);
+  --color-surface:        var(--color-gray-50);
+  --color-card:           var(--color-gray-200);
+  --color-text-primary:   var(--color-gray-900);
+  --color-text-muted:     var(--color-gray-700);
   --color-text-secondary: var(--color-gray-500);
   --color-action-primary:          var(--color-gray-900);
   --color-action-primary-hover:    var(--color-gray-700);
-  --color-action-secondary:        var(--color-cream-200);
-  --color-action-secondary-hover:  var(--color-cream-300);
-
-  /* ── Component — map to semantic tokens ──
-   * These power specific UI elements.
-   * e.g. --color-btn-primary → bg-btn-primary, hover:bg-btn-primary-hover */
-  --color-btn-primary:         var(--color-action-primary);
-  --color-btn-primary-hover:   var(--color-action-primary-hover);
-  --color-btn-secondary:       var(--color-action-secondary);
-  --color-btn-secondary-hover: var(--color-action-secondary-hover);
+  --color-action-secondary:        var(--color-cream-300);
+  --color-action-secondary-hover:  var(--color-cream-200);
 
   /* ── Typography ──
    * --font-{name} → font-{name}
